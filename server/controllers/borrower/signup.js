@@ -5,7 +5,7 @@ export const BorrowerSignup = async (req, res) => {
     console.log("1");
     console.log(req.body);
     //destructuring the body
-    const { name, email, password, confPass, gender, mobile /*, city, state */} =
+    const { name, email, password, confPass, /*gender,*/ mobile /*, city, state */} =
       req.body;
     const profile = req.file.filename;
     console.log(profile);
@@ -15,7 +15,7 @@ export const BorrowerSignup = async (req, res) => {
       email &&
       password &&
       confPass &&
-      gender &&
+      // gender &&
       profile &&
       mobile/* &&
       city &&
@@ -29,7 +29,7 @@ export const BorrowerSignup = async (req, res) => {
             name,
             email,
             password,
-            gender,
+            // gender,
             profile,
             mobile,
             // city,
