@@ -25,24 +25,25 @@ export const Signin = async (req, res) => {
           //! generate authtoken for 2 days
           const token = generateAuthToken(user._id, "2d");
           //! returning the response
-      return (
-        res
-          .status(200)
-          //! creatig a new token for the session for a duration of 24 hour and sending to the client
-          .cookie("UserSession", token, {
-            path: "/",
-            expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
-            httpOnly: true,
-            sameSite: "strict",
-          })
-          .json({
-            status: "success",
-            message: "Login Successfull :-)",
-            user,
-            // token,
-          })
-      );
-    }
+          return (
+            res
+              .status(200)
+              //! creatig a new token for the session for a duration of 24 hour and sending to the client
+              .cookie("UserSession", token, {
+                path: "/",
+                expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
+                httpOnly: true,
+                sameSite: "strict",
+              })
+              .json({
+                status: "success",
+                message: "Login Successfull :-)",
+                user,
+                type: "borrower",
+                // token,
+              })
+          );
+        }
       }
     }
     if (await LenderPD.findOne({ email })) {
@@ -77,6 +78,7 @@ export const Signin = async (req, res) => {
                 status: "success",
                 message: "Login Successfull :-)",
                 user,
+                type: "lender",
                 // token,
               })
           );

@@ -8,6 +8,7 @@ import { LenderRoutes } from "./routes/lenderRoutes.js";
 import multer from "multer";
 import dotenv from "dotenv";
 import fs from "fs";
+import { Signin } from "./controllers/auth/signin.js";
 dotenv.config();
 
 const app = express();
@@ -34,6 +35,9 @@ app.use("/api/lender", LenderRoutes);
 
 //!Borrower Routes
 app.use("/api/borrower", BorrowerRoutes);
+
+// ! Login Routes
+app.post("/api/user",Signin);
 
 app.listen(process.env.PORT, (err) => {
   if (err) return err.message;

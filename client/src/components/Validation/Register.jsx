@@ -58,7 +58,7 @@ const Register = () => {
       user.profile &&
       user.mobile
     ) {
-      if (user.type !== "lender" && user.type !== "borrower") {
+      if (!(user.type === "lender" || user.type === "borrower")) {
         console.log(user.type);
         console.log(user.type === "lender");
         toast.dismiss(toastId);
@@ -94,7 +94,7 @@ const Register = () => {
             // formdata.append("gender", user.gender);
             formdata.append("mobile", user.mobile);
             if (user.type === "lender") {
-              console.log("1")
+              console.log("1");
               const { data } = await axios.post(
                 "http://localhost:8000/api/lender/signup",
                 formdata,
@@ -119,14 +119,15 @@ const Register = () => {
               }
             }
             if (user.type === "borrower") {
-              console.log("2")
+              console.log("2");
               const { data } = await axios.post(
-                "/api/borrower/signup",
+                "http://localhost:8000/api/borrower/signup",
                 formdata,
                 {
                   headers: { "Content-Type": "multipart/form-data" },
                 }
               );
+              console.log(data);
               if (data.status === "success") {
                 toast.dismiss(toastId);
                 toast.success(data.message, {

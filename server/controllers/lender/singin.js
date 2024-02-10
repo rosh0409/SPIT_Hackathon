@@ -38,6 +38,7 @@ export const LenderSignin = async (req, res) => {
                 status: "success",
                 message: "Login Successfull :-)",
                 user,
+                type:"lender"
                 // token,
               })
           );

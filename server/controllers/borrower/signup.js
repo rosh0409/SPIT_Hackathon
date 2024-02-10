@@ -5,8 +5,13 @@ export const BorrowerSignup = async (req, res) => {
     console.log("1");
     console.log(req.body);
     //destructuring the body
-    const { name, email, password, confPass, /*gender,*/ mobile /*, city, state */} =
-      req.body;
+    const {
+      name,
+      email,
+      password,
+      confPass,
+      /*gender,*/ mobile /*, city, state */,
+    } = req.body;
     const profile = req.file.filename;
     console.log(profile);
     //!checking every variable contains value
@@ -17,13 +22,17 @@ export const BorrowerSignup = async (req, res) => {
       confPass &&
       // gender &&
       profile &&
-      mobile/* &&
+      mobile /* &&
       city &&
       state*/
     ) {
       //!both password and confirm password should be same
       if (password === confPass) {
+        console.log("here1");
+
         if (!(await BorrowerPD.findOne({ email }))) {
+          console.log("here2");
+
           //! Creating user schema
           const user = new BorrowerPD({
             name,
@@ -37,7 +46,8 @@ export const BorrowerSignup = async (req, res) => {
           });
 
           //!saving user to database
-            const userStatus = await user.save();
+          const userStatus = await user.save();
+          console.log(userStatus);
           return res.status(200).json({
             status: "success",
             message: "Registration successfull :-) ",

@@ -38,6 +38,7 @@ export const BorrowerSignin = async (req, res) => {
                 status: "success",
                 message: "Login Successfull :-)",
                 user,
+                type: "borrower",
                 // token,
               })
           );
