@@ -4,12 +4,12 @@ export const LenderSignup = async (req, res) => {
   try {
     // console.log(req.body);
     //destructuring the body
-    const { name, email, password, confPass, gender, mobile } = req.body;
+    const { name, email, password, confPass, /*gender,*/ mobile } = req.body;
     const profile = req.file.filename;
-    console.log(name, email, password, confPass, gender, mobile, profile);
+    console.log(name, email, password, confPass, /*gender,*/ mobile, profile);
     console.log("q1");
     //!checking every variable contains value
-    if (name && email && password && confPass && gender && profile && mobile) {
+    if (name && email && password && confPass && /*gender &&*/ profile && mobile) {
       console.log("q2");
       //!both password and confirm password should be same
       if (password === confPass) {
@@ -21,20 +21,20 @@ export const LenderSignup = async (req, res) => {
             name,
             email,
             password,
-            gender,
+            // gender,
             profile,
             mobile,
           });
 
           console.log("q5");
           //!saving user to database
-          const userStatus = await user.save();
-          console.log(userStatus);
+            const userStatus = await user.save();
+            console.log(userStatus);
           console.log("1234");
           return res.status(200).json({
             status: "success",
             message: "Registration successfull :-) ",
-            user: userStatus,
+            user: user,
           });
         } else {
           return res.status(400).json({

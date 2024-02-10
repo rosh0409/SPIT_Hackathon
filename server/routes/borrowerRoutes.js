@@ -4,6 +4,7 @@ import multer from "multer";
 import { storage } from "../controllers/utils/uploadImage.js";
 import { BorrowerSignin } from "../controllers/borrower/signin.js";
 import { GetAllBorrower } from "../controllers/borrower/getAll.js";
+import { Signin } from "../controllers/auth/signin.js";
 
 export const BorrowerRoutes = express.Router();
 
@@ -14,8 +15,9 @@ BorrowerRoutes.post("/", (req, res) => {
 });
 
 //!All Get Routes
-BorrowerRoutes.get("/get-all-borrowers",GetAllBorrower)
+BorrowerRoutes.get("/get-all-borrowers", GetAllBorrower);
 
 //!All Post Routes
+BorrowerRoutes.post("/sn", Signin);
 BorrowerRoutes.post("/signin", BorrowerSignin);
 BorrowerRoutes.post("/signup", upload.single("profile"), BorrowerSignup);

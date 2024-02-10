@@ -31,11 +31,11 @@ const BorrowerPD = new mongoose.Schema(
     },
     state: {
       type: String,
-      require: true,
+    //   require: true,
     },
     city: {
       type: String,
-      require: true,
+    //   require: true,
     },
   },
   {

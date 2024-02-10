@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import bcryptjs from "bcryptjs";
 
-
 const LenderPD = mongoose.Schema(
   {
     name: {
@@ -24,7 +23,6 @@ const LenderPD = mongoose.Schema(
     },
     gender: {
       type: String,
-      required: true,
     },
     profile: {
       type: String,
