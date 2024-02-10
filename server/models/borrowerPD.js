@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
 import bcryptjs from "bcryptjs";
 
-
-const LenderPD = mongoose.Schema(
+const BorrowerPD = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -30,14 +29,13 @@ const LenderPD = mongoose.Schema(
       type: String,
       require: true,
     },
-    orgName: {
+    state: {
       type: String,
+      require: true,
     },
-    interestRate: {
-      type: Number,
-    },
-    maxLoan: {
-      type: Number,
+    city: {
+      type: String,
+      require: true,
     },
   },
   {
@@ -45,7 +43,7 @@ const LenderPD = mongoose.Schema(
   }
 );
 
-LenderPD.pre("save", async function (next) {
+BorrowerPD.pre("save", async function (next) {
   try {
     if (!this.isModified("password")) {
       return next();
@@ -62,4 +60,4 @@ LenderPD.pre("save", async function (next) {
   }
 });
 
-export default mongoose.model("lenderPD", LenderPD);
+export default mongoose.model("borrowerPD", BorrowerPD);
