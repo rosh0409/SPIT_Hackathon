@@ -9,7 +9,8 @@ import {
     ListItem,
     ListItemAvatar,
     ListItemText,
-    Stack,
+    Stack,  
+    
     Typography,
   } from "@mui/material";
   import React, { useState } from "react";
@@ -23,7 +24,7 @@ import { Link } from "react-router-dom";
   
   
   
-  const Feed = () => {
+  const Ldash = () => {
     const [isPop, setPop] = useState(false);
     const [btn,setBtn]=useState("Add Post");
   
@@ -257,5 +258,5 @@ import { Link } from "react-router-dom";
     );
   };
   
-  export default Feed;
+  export default Ldash;
   

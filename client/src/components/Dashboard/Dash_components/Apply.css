@@ -1,0 +1,47 @@
+
+#form-container {
+    display: flex;
+    width: 80%; /* Adjust the width as needed */
+    background-color: #90ee90; /* Light Green background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#left-container,
+#right-container {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#left-container {
+    background-color: #38a3a5; /* White background for the left container */
+    border-right: 1px solid #ccc; /* Border between left and right containers */
+}
+
+#right-container {
+    background-color: #38a3a5; /* Light Green background for the right container */
+}
+
+/* Add additional styling for your form elements as needed */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #033a05; /* Green button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

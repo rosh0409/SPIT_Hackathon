@@ -3,6 +3,7 @@ import React from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import { Link } from 'react-router-dom';
+import EventNoteIcon from '@mui/icons-material/EventNote';
 
 
 const Side = () => {
@@ -22,7 +23,7 @@ const Side = () => {
         <Box sx={{
             overflow:'hidden'
         }}>
-            <Link to={'/dash'}>
+            <Link to={'/dash/home'}>
             <HomeIcon sx={{color:'white'}}/>
             </Link>    
         </Box>
@@ -33,11 +34,13 @@ const Side = () => {
               <QueryStatsIcon sx={{color:'white'}}/>
               </Link>
         </Box>
-        <Box sx={{
+       <Link to={'/dash/details'}>
+       <Box sx={{
             overflow:'hidden'
         }}>
-               <HomeIcon sx={{color:'white'}}/>
+               <EventNoteIcon sx={{color:'white'}}/>
         </Box>
+       </Link>
         <Box sx={{
             overflow:'hidden'
         }}>

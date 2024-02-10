@@ -4,6 +4,8 @@ import Feed from './Feed'
 import Side from './Side'
 import { Route, Routes } from 'react-router-dom'
 import FindLenders from './Dash_components/FindLenders'
+import LoanDetails from './Dash_components/LoanDetails'
+import ApplyForm from './Dash_components/ApplyForm'
 
 const Dashboard = () => {
   return (
@@ -25,8 +27,10 @@ const Dashboard = () => {
         width:'95%'
     }}>
         <Routes>
-            <Route  path="/*" element={<Feed />} />
+            <Route  path="/home" element={<Feed />} />
             <Route  path="/find" element={<FindLenders />} />
+            <Route  path="/details" element={<LoanDetails />} />
+            <Route  path="/form" element={<ApplyForm />} /> 
         </Routes>
      <Feed/>
     </Box>

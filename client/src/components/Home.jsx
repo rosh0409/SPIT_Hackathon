@@ -25,7 +25,7 @@ const Home = () => {
                         width: "100vw",
                         height: "100vh",
                         backgroundImage:
-                            "url(https://cdn.pixabay.com/photo/2017/08/30/07/52/money-2696219_1280.jpg)",
+                            "url(https://images.unsplash.com/photo-1553356009-50faee7aa84c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
                     }}
@@ -38,7 +38,7 @@ const Home = () => {
                             backdropFilter: "filter(30px)",
                         }}
                     >
-                        <h1 className="logo">SaverFy</h1>
+                        <h1 className="logo">AgriGrow</h1>
                     </Box>
                     <Box
                         sx={{
@@ -48,7 +48,7 @@ const Home = () => {
                             alignItems: "center",
                         }}
                     >
-                        <h1 className="head-logo">Welcome To AgriGrow</h1>
+                     
                         <Box
                             sx={{
                                 width: "60vw",
@@ -61,6 +61,7 @@ const Home = () => {
                                 backdropFilter: "blur(30px)",
                             }}
                         >
+                               <h1 className="head-logo">Welcome To AgriGrow</h1>
                             <Stack gap={4} direction={"row"}>
                                 <Link to={"/login"}>
                                     <Button
@@ -72,7 +73,7 @@ const Home = () => {
                                             },
                                         }}
                                         variant="contained"
-                                        color="primary"
+                                        color="success"
                                     >
                                         Login
                                     </Button>
@@ -88,7 +89,7 @@ const Home = () => {
                                             },
                                         }}
                                         variant="contained"
-                                        color="primary"
+                                        color="warning"
                                     >
                                         Register
                                     </Button>
@@ -98,7 +99,7 @@ const Home = () => {
                         {/* signbutton div ends */}
                     </Box>
                     {/* bground img div ends */}
-                    <Box
+                    {/* <Box
                         sx={{
                             width: "100vw",
                             height: "20vh",
@@ -110,8 +111,8 @@ const Home = () => {
                     >
                         <h2 style={{ color: "white" }}>
                             Support: <span>123@outlook</span>
-                        </h2>
-                        <h2 style={{ color: "white" }}>
+                        </h2> */}
+                        {/* <h2 style={{ color: "white" }}>
                             HelpLine: <span>1800 1029 1291</span>
                         </h2>
                         <Stack direction={"row"} gap={4}>
@@ -141,7 +142,7 @@ const Home = () => {
                                 />
                             </Button>
                         </Stack>
-                    </Box>
+                    </Box> */}
                 </Box>
                 {/* main div ends */}
             </Box>
