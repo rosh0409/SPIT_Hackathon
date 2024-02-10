@@ -32,7 +32,6 @@ const LenderPD = mongoose.Schema(
     },
     orgName: {
       type: String,
-      required: true,
     },
     interestRate: {
       type: Number,

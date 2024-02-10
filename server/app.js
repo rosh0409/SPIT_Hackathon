@@ -13,11 +13,15 @@ dotenv.config();
 const app = express();
 // app.use(cookieParser());
 app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 app.use(cors());
 
 //! Making static file access over http
 app.use("/static", express.static("public/uploads"));
-
 
 // const upload = multer({ storage: "public/uploads" });
 

@@ -37,7 +37,7 @@ export const BorrowerSignup = async (req, res) => {
           });
 
           //!saving user to database
-          //   const userStatus = await user.save();
+            const userStatus = await user.save();
           return res.status(200).json({
             status: "success",
             message: "Registration successfull :-) ",
